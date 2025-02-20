@@ -5,7 +5,6 @@ import { User } from "../../models/users";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
-import path from "path";
 import { rateLimiter } from "../common/rateLimiter";
 
 dotenv.config();
@@ -26,8 +25,9 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       res
         .status(429)
         .json({ message: "Too many login attempts. Try again later." });
+      return;
     }
-    //user collection
+
     const user = await User.findOne({ username });
     if (!user) {
       res.status(401).json({ message: "Invalid username or password" });
@@ -37,7 +37,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       res
         .status(403)
         .json({ message: "Account is locked. Please contact JustoGlobal." });
-      return;
     }
 
     // Validate password
@@ -47,8 +46,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       if (user.lockAttempt >= maxLockAttempts) {
         user.lockUser = 1;
       }
+      await user.save();
       res.status(401).json({ message: "Invalid username or password" });
-      return;
     }
     user.lockAttempt = 0;
     await user.save();

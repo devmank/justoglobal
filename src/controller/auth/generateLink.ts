@@ -15,6 +15,7 @@ export const generateLink = async (
     const { emailOrPhone } = req.body;
     if (!emailOrPhone) {
       res.status(400).json({ message: "Email or phone is required" });
+      return;
     }
 
     const token = crypto.randomBytes(32).toString("hex");
