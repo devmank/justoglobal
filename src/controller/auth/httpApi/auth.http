@@ -1,0 +1,21 @@
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+ "username":"maneesh@gmail.com",
+ "password":"test",
+ "ipAddress":"127.1.0.1"
+}
+
+###
+POST http://localhost:8080/auth/generate-link
+Content-Type: application/json
+
+{
+ "emailOrPhone":"maneesh@gmail.com"
+}
+
+
+###
+
+GET http://localhost:8080/auth/verifyToken/5a3895764adf74e2f873d6beb0ef1e6fbed21ad7cfeecfb0c574a206ca2d796e

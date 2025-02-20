@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "username": "maneesh@gmail.com",
+        "password": "$2b$10$NhhHBAOOQKMAR9.1leK/P.XKbKtZ8duHimJ2rFt5Dva0n9sy2v.T2",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "78995843912",
+        "password": "$2b$10$NhhHBAOOQKMAR9.1leK/P.XKbKtZ8duHimJ2rFt5Dva0n9sy2v.T2",
+        "role": "user"
+    }
+]

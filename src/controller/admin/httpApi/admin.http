@@ -1,0 +1,7 @@
+POST http://localhost:8080/admin/kickOutUser
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2I2ZTY0YjlkNDUwYTg2NDY4NDI5ZTEiLCJ1c2VybmFtZSI6Im1hbmVlc2hAZ21haWwuY29tIiwiaWF0IjoxNzQwMDQ5OTY5LCJleHAiOjE3NDAwNTM1Njl9.1ZEHS18514IZV3FaCU1POEmGkFFzUxkwJxuWA1a23So
+
+{
+    "username":"maneeshkv@gmail.com"
+}
