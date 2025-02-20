@@ -19,7 +19,7 @@ export const generateLink = async (
     }
 
     const token = crypto.randomBytes(32).toString("hex");
-    const EXPIRY_TIME_MINUTES = Number(EXPIRY_TIME_MINUTES_ENV) || 15; // Default to 15 mins if not set
+    const EXPIRY_TIME_MINUTES = Number(EXPIRY_TIME_MINUTES_ENV) || 15;
 
     const expiresAt = new Date(Date.now() + EXPIRY_TIME_MINUTES * 60000);
 
